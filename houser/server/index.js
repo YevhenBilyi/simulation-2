@@ -14,6 +14,10 @@ massive( process.env.CONNECTION_STRING ).then(dbInstance=>{
     app.set('db', dbInstance);
 });
 
+app.get('/api/houses', ctrl.getAll)
+app.post('/api/house', ctrl.create)
+app.delete('/api/house/:id', ctrl.delete)
+
 
 
 

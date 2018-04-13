@@ -2,11 +2,13 @@ import React from'react';
 
 
 
-export default function House () {
+export default function House (props) {
   
     return (
       <div className="House">
-        House
+        <h1> House:{props.name} </h1>
+        <h2> Address:{props.address} city:{props.city} {props.state} {props.zip}</h2>
+        <button> Delete </button>
       </div>
     );
   }
