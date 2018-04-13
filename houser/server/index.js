@@ -9,6 +9,7 @@ const port = 3005;
 
 app.use(bodyParser.json());
 app.use( cors());
+app.use(express.static(`${__dirname}/../build`))
 
 massive( process.env.CONNECTION_STRING ).then(dbInstance=>{
     app.set('db', dbInstance);

@@ -7,10 +7,10 @@ module.exports={
     },
     create:(req,res,next)=>{
         const dbInstance=req.app.get('db');
-        const{name, address, city, state, zipcode}=req.body;
-        dbInstance.create_house([name,address,city,state,zipcode])
+        const{name, address, city, state, zipcode,img, mortgage,rent }=req.body;
+        dbInstance.create_house([name,address,city,state, zipcode, img, mortgage, rent])
         .then(()=>res.status(200).send())
-        .catch(()=>res.status(500).send())
+        .catch((err)=>res.status(500).send(console.log(err)))
     },
     delete:(req,res,next)=>{
         const dbInstance=req.app.get('db');

@@ -26,13 +26,14 @@ class Dashboard extends Component {
   render() {
     let list=this.state.list.map((house,i)=>{
       return ( <House key={i} name={house.name} address={house.address} city={house.city} 
-        state={house.state} zip={house.zip} id={house.id} delete={this.deleteHouse}/>)
+        state={house.state} zip={house.zip  } id={house.id} delete={this.deleteHouse} 
+        img={house.img} mortgage={house.mortgage} rent={house.rent}/>)
     })
     return (
       <div className="Dashboard">
         Dashboard
         {list}
-        <Link to='/wizard'><button>Add New Property  </button></Link>
+        <Link to='/wizard/step1'><button>Add New Property  </button></Link>
       </div>
     );
   }
